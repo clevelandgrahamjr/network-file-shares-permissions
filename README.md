@@ -112,7 +112,7 @@ I built a small business-style file-sharing environment using **Windows Server, 
 
 **Method:** Used an **AI-assisted PowerShell script, which I personally guided and thoroughly reviewed multiple times, then adapted for this lab** to create 47 employee accounts and the `IT-Users`, `Finance-Users`, and `HR-Users` security groups.
 
-> **PowerShell source:** [View the user-provisioning script](./scripts/create-users.ps1)
+> **PowerShell source:** [View the user-provisioning script](clevelandgrahamjr/scripts/create-users.ps1)
 
 **Reason:** Automated a repetitive task while keeping account creation and group assignments consistent.
 
