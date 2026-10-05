@@ -29,22 +29,22 @@ I built a small business-style file-sharing environment using **Windows Server, 
 
 ## High-Level Deployment & Configuration
 
-1. **Deployed Windows Server and Windows 11 VMs** to establish the server/client lab environment.
+1. **Deployed Windows Server and Windows 11 VMs** in Microsoft Azure.
 
-2. **Installed and configured AD DS and DNS** after temporarily disabling the Windows Server firewall to reduce connectivity variables during initial setup.
+2. **Installed Active Directory Domain Services (AD DS) and DNS** after temporarily disabling the server firewall for setup and testing.
 
-3. **Created three administrator accounts manually and joined the Windows 11 client to `arxcorp.com`** to establish domain administration and client membership.
+3. **Created three admin accounts manually and joined the Windows 11 client to `arxcorp.com`.**
 
-4. **Automated provisioning of 47 employee accounts and three departmental security groups with PowerShell** to demonstrate repeatable Active Directory administration.
+4. **Used PowerShell to create 47 employee accounts and three departmental security groups.**
 
-5. **Re-enabled the Windows Server firewall and configured file sharing** with the required Windows firewall rules and departmental share permissions.
+5. **Re-enabled the server firewall and configured network file sharing and permissions.**
 
-6. **Verified successful non-admin share access, then deliberately introduced a permissions failure** to establish a known-good baseline and create a realistic troubleshooting scenario.
+6. **Confirmed successful non-admin access, then deliberately created a permissions issue.**
 
-7. **Reproduced and diagnosed the access issue with two non-admin users** using File Explorer and PowerShell to separate network connectivity from permission-related behavior.
+7. **Tested the problem with two users and used PowerShell to narrow down the cause.**
 
-8. **Corrected the affected group permissions and verified restored access** from the Windows 11 client.
----
+8. **Corrected the group permissions and verified that file access was restored.**
+
 
 # Deployment and Configuration Steps
 
@@ -111,6 +111,8 @@ I built a small business-style file-sharing environment using **Windows Server, 
 ## 4. Automate Employee and Security-Group Creation
 
 **Method:** Used an **AI-assisted PowerShell script, which I personally guided and thoroughly reviewed multiple times, then adapted for this lab** to create 47 employee accounts and the `IT-Users`, `Finance-Users`, and `HR-Users` security groups.
+
+> **PowerShell source:** [View the user-provisioning script](./scripts/create-users.ps1)
 
 **Reason:** Automated a repetitive task while keeping account creation and group assignments consistent.
 
